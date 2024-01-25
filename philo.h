@@ -6,7 +6,7 @@
 /*   By: rcarbonn <rcarbonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 19:26:06 by rcarbonn          #+#    #+#             */
-/*   Updated: 2024/01/23 20:16:07 by rcarbonn         ###   ########.fr       */
+/*   Updated: 2024/01/25 06:18:51 by rcarbonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,31 @@
 #include <unistd.h>
 //#include "./libft/libft.h"
 
+
 typedef struct philo_s
 {
-    int id;
-    pthread_t thread;
-    long last_meal;
-    int c_meal;
-    struct s_setting *set;
-
+    int place; //place autour de la table
+	long last_meal; // dernier repas
+	int c_meal; //combien de repas
+	pthread_t id; // identifiant du philo
+	pthread_mutex_t mutex; // mutex
+	
 } t_philo;
 
 typedef struct setting_s
 {
-    t_philo *philo;
-    int t_die;
-    int t_eat;
-    int t_howmuch;
-    int t_sleep;
-    int start_time;
-    pthread_mutex_t forks;
-    pthread_mutex_t status;
-    pthread_mutex_t meal_time;
-    int num_philo;
+	int num_philo; // numero du philo
+	int t_die; // temps de mort
+	int t_eat; // temps de repas
+	int t_sleep; // temps de repos
+	int how_much; // combien de repas
+	int start_time; // lancement du programme
+	pthread_mutex_t *r_f; // fourchette gauche
+	pthread_mutex_t *l_f; // fourchette droite
+    t_philo *philo; // acces paramettre des philos
+	
 } t_setting;
+
 
 
 // parsing 

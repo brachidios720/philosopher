@@ -1,7 +1,4 @@
 #include "philo.h"
-#include <stdio.h>
-
-
 
 int ft_pars_args(int ac, char **av, t_setting *set)
 {
@@ -9,7 +6,7 @@ int ft_pars_args(int ac, char **av, t_setting *set)
     set->t_die = 0;
     set->t_eat = 0;
     set->t_sleep = 0;
-    set->t_howmuch= 0;
+    set->how_much = 0;
     set->start_time = find_ms();
     if(ft_atoi(av[1], &set->num_philo)
         || ft_atoi(av[2], &set->t_die)
@@ -20,11 +17,11 @@ int ft_pars_args(int ac, char **av, t_setting *set)
         return(0);
     if(ac == 6)
     {
-        if(ft_atoi(av[5], &set->t_howmuch))
+        if(ft_atoi(av[5], &set->how_much))
             return(0);
     }
     else 
-        set->t_howmuch = -1;
+        set->how_much = -1;
     return(1);
 }
 

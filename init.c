@@ -3,11 +3,13 @@
 
 int	ft_create_philo(t_setting *set, int i)
 {
-	set->philo[i].id = i;
+	set->philo[i].place = i;
 	set->philo[i].last_meal = find_ms();
-	set->philo[i].set = set;
-	set->philo[i].c_meal = set->t_howmuch;
-	if(pthread_mutex_init())
+	set->philo[i].place =  
+	set->philo[i].c_meal = set->how_much;
+	if(pthread_mutex_init(&set->philo[i].mutex, NULL))
+		return(1);
+	if(pthread_create(&set->philo[i].id, NULL, ))
 }
 int	ft_init_philo(int av, char **ac, t_setting *set)
 {
@@ -16,7 +18,7 @@ int	ft_init_philo(int av, char **ac, t_setting *set)
 
 int	ft_init_forks(t_setting *set)
 {
-	set->l_forks
+	
 }
 
 // typedef struct philo_s
