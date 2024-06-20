@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+         #
+#    By: rcarbonn <rcarbonn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 19:14:23 by rcarbonn          #+#    #+#              #
-#    Updated: 2024/06/19 00:23:14 by raphaelcarb      ###   ########.fr        #
+#    Updated: 2024/06/20 11:08:04 by rcarbonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang
 CFLAGS = -Wall -Werror -Wextra
 LINK = libft/libft.a
+LIBFT_DIR = ./libft
+LIBFT_LIB = -lft
 EXE = philo
 RM = rm -rf
 
@@ -29,7 +31,7 @@ libft:
 	$(MAKE) -C libft
 
 $(EXE): $(srco) $(LINK)
-	$(CC) $(CFLAGS) $(LINK) $(srco) -o $(EXE)
+	$(CC) $(CFLAGS) -L$(LIBFT_DIR) $(srco) -o $(EXE) $(LIBFT_LIB)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

@@ -28,10 +28,10 @@ void ft_pars_args(int ac, char **av, t_setting *set)
     }
     set->num_philo = ft_atoi_dif(av[1]);
     set->t_die  = ft_atoi_dif(av[2]);
-    set->t_eat = ft_atoi_dif(av[3]);
+    set->t_sleep = ft_atoi_dif(av[3]);
     set->t_eat = ft_atoi_dif(av[4]);
     if(ac == 6)
-        set->how_much=ft_atoi(av[5]);
+        set->how_much=ft_atoi_dif(av[5]);
 }
 // int ft_parse_args(int ac, char **av, t_setting philo)
 // {

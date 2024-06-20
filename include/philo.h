@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
+/*   By: rcarbonn <rcarbonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 19:26:06 by rcarbonn          #+#    #+#             */
-/*   Updated: 2024/06/19 00:20:41 by raphaelcarb      ###   ########.fr       */
+/*   Updated: 2024/06/20 13:20:12 by rcarbonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@
 
 typedef struct philo_s
 {
-    int place; //place autour de la table
 	long last_meal; // dernier repas
 	int c_meal; //combien de repas
-	pthread_t id; // identifiant du philo
-	pthread_mutex_t mutex; // mutex
+	int id; // identifiant du philo
 	
 } t_philo;
 
@@ -37,6 +35,7 @@ typedef struct setting_s
 	int t_sleep; // temps de repos
 	int how_much; // combien de repas
 	int start_time; // lancement du programme
+	pthread_t num; // les threads 
 	pthread_mutex_t *r_f; // fourchette gauche
 	pthread_mutex_t *l_f; // fourchette droite
     t_philo *philo; // acces paramettre des philos

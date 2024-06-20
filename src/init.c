@@ -1,42 +1,41 @@
 #include "../include/philo.h"
 
+void init_philo(t_philo *philo)
+{
+    philo->last_meal = find_ms();
+    philo->c_meal = 0;
+}
 
-// int	ft_create_philo(t_setting *set, int i)
-// {
-// 	set->philo[i].place = i;
-// 	set->philo[i].last_meal = find_ms();
-// 	set->philo[i].place =  
-// 	set->philo[i].c_meal = set->how_much;
-// 	if(pthread_mutex_init(&set->philo[i].mutex, NULL))
-// 		return(1);
-// 	if(pthread_create(&set->philo[i].id, NULL, ))
-// }
-// int	ft_init_philo(int av, char **ac, t_setting *set)
-// {
+void init_settings(t_setting *set)
+{
+    int i = 0;
+    while(i > set->num_philo)
+    {
+        set->num = pthread_create()
+    }
+}
 
-// }
-
-// int	ft_init_forks(t_setting *set)
-// {
-	
-// }
 
 // typedef struct philo_s
 // {
-//     int num_philo;
-//     pthread_t thread;
-//     long last_meal;
-//     int c_meal;
-
+// 	long last_meal; // dernier repas
+// 	int c_meal; //combien de repas
+// 	int id; // identifiant du philo
+// 	pthread_mutex_t mutex; // mutex
+	
 // } t_philo;
 
 // typedef struct setting_s
 // {
-//     int t_die;
-//     int t_eat;
-//     int t_think;
-//     pthread_mutex_t *forks;
-//     pthread_mutex_t status;
-//     pthread_mutex_t meal_time;
-//     int num_phil;
+// 	int num_philo; // nombre de philo
+// 	int t_die; // temps de mort
+// 	int t_eat; // temps de repas
+// 	int t_sleep; // temps de repos
+// 	int how_much; // combien de repas
+// 	int start_time; // lancement du programme
+// 	pthread_t num; // les threads 
+// 	pthread_mutex_t *r_f; // fourchette gauche
+// 	pthread_mutex_t *l_f; // fourchette droite
+//     t_philo *philo; // acces paramettre des philos
+	
 // } t_setting;
