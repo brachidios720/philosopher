@@ -3,25 +3,26 @@
 void init_philo(t_philo *philo)
 {
     philo->last_meal = find_ms();
-    philo->c_meal = 0;
+    philo->id = 0;
 }
 
-void init_settings(t_setting *set)
+int init_settings(t_setting *set, t_philo *philo)
 {
-    int i = 0;
-    while(i > set->num_philo)
-    {
-        set->num = pthread_create()
-    }
+    set->start_time = find_ms();
+    set->forks = malloc(sizeof(pthread_mutex_t) * set->num_philo);
+    set->philo = malloc(sizeof(t_philo) * set->num_philo);
+    if(!set->forks || !set->philo)
+        return(1);
+    init_philo(philo);
+    return(0);
 }
+
 
 
 // typedef struct philo_s
 // {
 // 	long last_meal; // dernier repas
-// 	int c_meal; //combien de repas
 // 	int id; // identifiant du philo
-// 	pthread_mutex_t mutex; // mutex
 	
 // } t_philo;
 
@@ -34,8 +35,7 @@ void init_settings(t_setting *set)
 // 	int how_much; // combien de repas
 // 	int start_time; // lancement du programme
 // 	pthread_t num; // les threads 
-// 	pthread_mutex_t *r_f; // fourchette gauche
-// 	pthread_mutex_t *l_f; // fourchette droite
+// 	pthread_mutex_t *forks; // fourchettes
 //     t_philo *philo; // acces paramettre des philos
 	
 // } t_setting;

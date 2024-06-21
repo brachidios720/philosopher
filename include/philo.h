@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcarbonn <rcarbonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 19:26:06 by rcarbonn          #+#    #+#             */
-/*   Updated: 2024/06/20 13:20:12 by rcarbonn         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:41:20 by raphaelcarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@
 typedef struct philo_s
 {
 	long last_meal; // dernier repas
-	int c_meal; //combien de repas
-	int id; // identifiant du philo
-	
+	int		id;	//num philo 
 } t_philo;
 
 typedef struct setting_s
@@ -36,8 +34,7 @@ typedef struct setting_s
 	int how_much; // combien de repas
 	int start_time; // lancement du programme
 	pthread_t num; // les threads 
-	pthread_mutex_t *r_f; // fourchette gauche
-	pthread_mutex_t *l_f; // fourchette droite
+	pthread_mutex_t *forks; // fourchettes
     t_philo *philo; // acces paramettre des philos
 	
 } t_setting;
@@ -50,6 +47,10 @@ int     ft_atoi_dif(char *str);
 int     ft_isdigit_dif(char *str);
 long	find_ms(void);
 
+// initialisation 
+
+void init_philo(t_philo *philo);
+int init_settings(t_setting *set, t_philo *philo);
 
 // error
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rcarbonn <rcarbonn@student.42.fr>          +#+  +:+       +#+         #
+#    By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 19:14:23 by rcarbonn          #+#    #+#              #
-#    Updated: 2024/06/20 11:08:04 by rcarbonn         ###   ########.fr        #
+#    Updated: 2024/06/20 14:40:23 by raphaelcarb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
