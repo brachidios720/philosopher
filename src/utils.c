@@ -6,7 +6,7 @@
 /*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:02:20 by raphaelcarb       #+#    #+#             */
-/*   Updated: 2024/06/19 01:22:04 by raphaelcarb      ###   ########.fr       */
+/*   Updated: 2024/06/25 17:20:04 by raphaelcarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,12 @@ void	ft_exit(int i)
 	if(i == 1)
 		ft_printf("WRONG ARGUMENTS\n");
 	exit(0);
+}
+
+void	ft_clear(t_setting *set)
+{
+	if(set->forks)
+		free(set->forks);
+	if(set->philo)
+		free(set->philo);
 }
